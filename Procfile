@@ -1,1 +1,1 @@
-web: ENV_SILENT=true npm start
+web: node --harmony_proxies server.js
