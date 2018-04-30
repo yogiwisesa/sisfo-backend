@@ -47,11 +47,11 @@ module.exports = {
   mysql: {
     client: 'mysql',
     connection: {
-      host: Env.get('DB_HOST', 'localhost'),
-      port: Env.get('DB_PORT', ''),
-      user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
+      host: Env.get('DB_HOST', 'sidelearning.net'),
+      port: Env.get('DB_PORT', '3306'),
+      user: Env.get('DB_USER', 'sidelear_sisfo2018'),
+      password: Env.get('DB_PASSWORD', 'sidelear_sisfo2018'),
+      database: Env.get('DB_DATABASE', 'sidelear_sisfo3909')
     }
   },
 
