@@ -76,11 +76,11 @@ class KaryawanController {
     }
 
     async getListRequestBy({request}){
+
         // select * from TabelTukar WHERE id_jadwal1 in (select id_jadwal FROM TableJadwal WHERE id_karyawan = 1)
         let {id_karyawan} = request.all();
         console.log(id_karyawan);
-        let data = await Database.select('*').from('TabelTukar').whereIn('id_jadwal1', 
-        await Database.select('*').from('TableJadwal').where('id_karyawan', id_karyawan));
+        let data = await Database.select('*').from('TabelTukar').whereIn('id_jadwal1', Database.select('id_jadwal').from('TableJadwal').where('id_karyawan', id_karyawan));
         if (data.length > 0){
             return {
                 message: 'ok',
