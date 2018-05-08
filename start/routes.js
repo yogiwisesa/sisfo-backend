@@ -35,6 +35,6 @@ Route.get('/', () => {
 Route.post('login', 'KaryawanController.postLogin')
 Route.post('jadwal', 'KaryawanController.postJadwal')
 Route.post('requesttukar', 'KaryawanController.postRequestTukar')
-Route.get('getsemuakaryawan', 'KaryawanController.getSemuaKaryawan')
+Route.get('getsemuakaryawan', 'KaryawanController.getsemuakaryawan')
 Route.get('getsemuajadwal', 'KaryawanController.getSemuaJadwal')
 Route.post('getlistukar', 'KaryawanController.getListRequestBy')
