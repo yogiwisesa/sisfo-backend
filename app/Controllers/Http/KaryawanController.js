@@ -45,11 +45,11 @@ class KaryawanController {
     }
 
     async getSemuaKaryawan(){
-        let data = await Database.select('*').from('karyawan')
+        let account = await Database.select('*').from('karyawan')
         if (data.length > 0) {
             return {
                 message: 'ok',
-                data
+                account
             }
         } else {
             return {
@@ -68,6 +68,24 @@ class KaryawanController {
         } else {
             return {
                 message: 'null'
+            }
+        }
+    }
+
+    async getListRequestBy({request}){
+        // select * from TabelTukar WHERE id_jadwal1 in (select id_jadwal FROM TableJadwal WHERE id_karyawan = 1)
+        let {id_karyawan} = request.all();
+        console.log(id_karyawan);
+        let data = await Database.select('*').from('TabelTukar').whereIn('id_jadwal1', 
+        await Database.select('*').from('TableJadwal').where('id_karyawan', id_karyawan));
+        if (data.length > 0){
+            return {
+                message: 'ok',
+                data
+            }
+        } else {
+            return {
+                message:'null'
             }
         }
     }
