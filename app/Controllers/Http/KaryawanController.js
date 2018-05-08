@@ -38,7 +38,7 @@ class KaryawanController {
          let data = await Database.table('TabelTukar').insert({ 
              id_jadwal1: idjadwal1,
              id_jadwal2: idjadwal2,
-             status: 'Belum dikonfirmasi'
+             status: 'Waiting for confirmation'
          })
 
         return {
@@ -90,6 +90,18 @@ class KaryawanController {
             return {
                 message:'null'
             }
+        }
+    }
+
+    async deleteTukarJadwal({request}){
+        let { id_jadwal } = request.all();
+        //let data = await Database.updated.from('TabelTukar').where('id_jadwal', id_jadwal)
+        let data = await Database.from('TabelTukar').where('id_tukar', id_jadwal).update({
+            status: 'Cancelled'
+        })
+        return {
+            message: 'ok',
+            data
         }
     }
 }
