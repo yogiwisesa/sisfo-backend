@@ -45,7 +45,7 @@ class KaryawanController {
     }
 
     async getSemuaKaryawan(){
-        let data = await Database.select('*').from('karyawan')
+        let account = await Database.select('*').from('karyawan')
         if (data.length > 0) {
             return {
                 message: 'ok',
