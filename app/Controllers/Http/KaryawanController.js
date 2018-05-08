@@ -46,12 +46,30 @@ class KaryawanController {
 
     async getSemuaKaryawan(){
         let data = await Database.select('*').from('karyawan')
-        return data
+        if (data.length > 0) {
+            return {
+                message: 'ok',
+                data
+            }
+        } else {
+            return {
+                message: 'null'
+            }
+        }
     }
 
     async getSemuaJadwal() {
         let data = await Database.select('*').from('TableJadwal')
-        return data
+        if (data.length > 0) {
+            return {
+                message: 'ok',
+                data
+            }
+        } else {
+            return {
+                message: 'null'
+            }
+        }
     }
 }
 
