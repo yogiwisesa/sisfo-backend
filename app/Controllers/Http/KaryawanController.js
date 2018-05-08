@@ -45,7 +45,7 @@ class KaryawanController {
     }
 
     async getSemuaJadwal(){
-        let data = await Database.table('karyawan')
+        let data = await Database.select('*').from('karyawan')
         return data
     }
 }
