@@ -91,4 +91,5 @@ class KaryawanController {
     }
 }
 
+
 module.exports = KaryawanController
