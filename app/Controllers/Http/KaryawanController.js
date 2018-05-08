@@ -41,7 +41,10 @@ class KaryawanController {
              status: 'Belum dikonfirmasi'
          })
 
-         return data
+        return {
+            message: 'ok',
+            data
+        } 
     }
 
     async getSemuaKaryawan(){
