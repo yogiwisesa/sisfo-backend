@@ -43,6 +43,11 @@ class KaryawanController {
 
          return data
     }
+
+    async getSemuaJadwal(){
+        let data = await Database.table('karyawan')
+        return data
+    }
 }
 
 module.exports = KaryawanController
